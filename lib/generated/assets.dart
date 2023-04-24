@@ -6,6 +6,7 @@ class Assets {
   static const String fontsBobbers = 'assets/fonts/Bobbers.ttf';
   static const String imagesBOOKLY = 'assets/images/BOOKLY.png';
   static const String imagesLoaderBook = 'assets/images/loader-book.json';
+  static const String imagesLoadreBook = 'assets/images/loadre-book.json';
   static const String imagesSplashBooks = 'assets/images/splash-books.json';
 
 }
