@@ -2,9 +2,10 @@
 class Assets {
   Assets._();
 
-  static const String generatedAssets = 'lib/generated/assets.dart';
-  static const String libMain = 'lib/main.dart';
-  static const String viewsSplashView = 'lib/Features/presentation/views/splash_view.dart';
-  static const String widgetsSplashViewBody = 'lib/Features/presentation/views/widgets/splash_view_body.dart';
+  static const String fontsAgne = 'assets/fonts/Agne.otf';
+  static const String fontsBobbers = 'assets/fonts/Bobbers.ttf';
+  static const String imagesBOOKLY = 'assets/images/BOOKLY.png';
+  static const String imagesLoaderBook = 'assets/images/loader-book.json';
+  static const String imagesSplashBooks = 'assets/images/splash-books.json';
 
 }
