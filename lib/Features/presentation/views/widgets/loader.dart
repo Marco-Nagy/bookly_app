@@ -12,16 +12,17 @@ class Loader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
-            ImgAssets.logo,
-            height: MediaQuery.of(context).size.height * .05,
+            'assets/images/BOOKLY.png',
             width: MediaQuery.of(context).size.width * .2,
+            height: MediaQuery.of(context).size.height*.05,
+            fit: BoxFit.scaleDown,
           ),
           Lottie.asset(
             ImgAssets.loader,
-            height: MediaQuery.of(context).size.height * .09,
-            width: MediaQuery.of(context).size.width * .17,
-            fit: BoxFit.cover
-          )
+            width: 70,
+            height: 50,
+            fit: BoxFit.fill,
+          ),
         ],
       ),
     );
