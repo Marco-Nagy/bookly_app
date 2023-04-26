@@ -12,7 +12,7 @@ class Loader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
-            'assets/images/BOOKLY.png',
+            ImgAssets.logo,
             width: MediaQuery.of(context).size.width * .2,
             height: MediaQuery.of(context).size.height*.05,
             fit: BoxFit.scaleDown,

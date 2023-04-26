@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.5
   animated_text_kit: ^4.2.2
   lottie: ^2.3.2
+  font_awesome_flutter: ^10.4.0
 
 dev_dependencies:
   flutter_test:
@@ -103,4 +104,10 @@ flutter:
      - family: Agne
        fonts:
          - asset: assets/fonts/Agne.otf
+     - family: Montserrat
+       fonts:
+         - asset: assets/fonts/Montserrat.ttf
+     - family: GtSectra
+       fonts:
+         - asset: assets/fonts/GT_Sectra_Fine.ttf
 
