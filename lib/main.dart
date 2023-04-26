@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bookly App',
       debugShowCheckedModeBanner: false,
+      debugShowMaterialGrid: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -33,6 +34,7 @@ class BooklyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kPrimaryColor),
       home: const SplashView(),
     );

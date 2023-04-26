@@ -1,7 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bookly/Features/Home/presentation/views/home_view.dart';
 import 'package:bookly/core/utils/constant.dart';
-import 'package:bookly/core/utils/fonts_assets.dart';
 import 'package:bookly/core/utils/img_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -67,7 +66,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
             child: DefaultTextStyle(
               style: const TextStyle(
                 fontSize: 14.0,
-                fontFamily: FontAssets.agne,
+                fontFamily: agne,
               ),
               child: AnimatedTextKit(
                 animatedTexts: [
