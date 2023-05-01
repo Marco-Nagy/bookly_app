@@ -1,10 +1,9 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:bookly/Features/Home/presentation/views/home_view.dart';
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/constant.dart';
 import 'package:bookly/core/utils/img_assets.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -75,7 +74,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
                       textAlign: TextAlign.center),
                 ],
                 totalRepeatCount: 1,
-                onFinished:()=>Get.to( const HomeView(),transition: Transition.circularReveal,duration: kTransitionDuration),
+                onFinished:()=>GoRouter.of(context).push(AppRouter.kHomeView),
               ),
             ),
           ),
