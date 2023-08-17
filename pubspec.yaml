@@ -35,10 +35,10 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.5
-  get: ^4.6.5
   animated_text_kit: ^4.2.2
-  lottie: ^2.3.2
-  font_awesome_flutter: ^10.4.0
+  lottie: ^2.6.0
+  font_awesome_flutter: ^10.5.0
+  go_router: ^10.0.0
 
 dev_dependencies:
   flutter_test:
@@ -49,7 +49,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.1
+  flutter_lints: ^2.0.2
 
 
 
@@ -106,7 +106,7 @@ flutter:
          - asset: assets/fonts/Agne.otf
      - family: Montserrat
        fonts:
-         - asset: assets/fonts/Montserrat.ttf
+         - asset: assets/fonts/Montserrat-VariableFont_wght.ttf
      - family: GtSectra
        fonts:
          - asset: assets/fonts/GT_Sectra_Fine.ttf
