@@ -5,9 +5,9 @@ import 'package:bookly/core/products_model.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-abstract class AppRouter  {
-  static const kHomeView= '/homeView';
-  static const kDetailsView= '/detailsView';
+abstract class AppRouter {
+  static const kHomeView = '/homeView';
+  static const kDetailsView = '/detailsView';
   static final router = GoRouter(
     routes: [
       GoRoute(

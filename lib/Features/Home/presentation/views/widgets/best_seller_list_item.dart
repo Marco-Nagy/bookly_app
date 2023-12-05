@@ -6,15 +6,18 @@ import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerListItem extends StatelessWidget {
-  const BestSellerListItem(  {Key? key,required this.demoProduct,}) : super(key: key);
- final ProductModel demoProduct;
+  const BestSellerListItem({
+    Key? key,
+    required this.demoProduct,
+  }) : super(key: key);
+  final ProductModel demoProduct;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
         height: 150,
-        width: MediaQuery.sizeOf(context).width-20,
+        width: MediaQuery.sizeOf(context).width - 20,
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(15.0)),
             color: kPrimaryColor,
@@ -25,7 +28,10 @@ class BestSellerListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomBookImage(productModel: demoProduct, position: 'BestSeller',),
+            CustomBookImage(
+              productModel: demoProduct,
+              position: 'BestSeller',
+            ),
             const Expanded(child: SizedBox()),
             Expanded(
                 flex: 7,
@@ -39,10 +45,10 @@ class BestSellerListItem extends StatelessWidget {
                     ),
                     Text(
                       'J.K. Rowling',
-                      style:
-                          Styles.textStyleNum14.copyWith(color: kWhite70Opacity),
+                      style: Styles.textStyleNum14
+                          .copyWith(color: kWhite70Opacity),
                     ),
-                    const Row(
+                    Row(
                       children: [
                         Expanded(
                           child: Text(
@@ -50,8 +56,8 @@ class BestSellerListItem extends StatelessWidget {
                             style: Styles.textStyleNum14,
                           ),
                         ),
-                        Expanded(
-                          child:BookRating() ,
+                        const Expanded(
+                          child: BookRating(),
                         )
                       ],
                     ),

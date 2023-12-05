@@ -75,35 +75,47 @@ class _HomeViewState extends State<HomeView> {
                     //       borderRadius: BorderRadius.only(
                     //           topLeft: Radius.circular(50),
                     //           topRight: Radius.circular(5))),
-                      child: ListView.builder(
-                        controller: scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        itemBuilder: (context, index) {
-                          double scale = 1.0;
-                          if (topContainer > 0.5) {
-                            scale = index + 0.5 - topContainer;
-                            if (scale < 0) {
-                              scale = 0;
-                            } else if (scale > 1) {
-                              scale = 1;
-                            }
+                    child: ListView.builder(
+                      controller: scrollController,
+                      physics: const BouncingScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        double scale = 1.0;
+                        if (topContainer > 0.5) {
+                          scale = index + 0.5 - topContainer;
+                          if (scale < 0) {
+                            scale = 0;
+                          } else if (scale > 1) {
+                            scale = 1;
                           }
-                          return Opacity(
-                            opacity: scale,
-                            child: Transform(
-                              transform: Matrix4.identity()..scale(scale, scale),
-                              alignment: Alignment.bottomCenter,
-                              child:  Align(
-                                  heightFactor: 0.7,
-                                  alignment: Alignment.topCenter,
-                                  child: GestureDetector(onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) => BookDetailsView(productModel: demoProducts[index], position: 'BestSeller',)));
-                                  },child: BestSellerListItem(demoProduct: demoProducts[index],))),
-                            ),
-                          );
-                        },
-                        itemCount: demoProducts.length,
-                      ),
+                        }
+                        return Opacity(
+                          opacity: scale,
+                          child: Transform(
+                            transform: Matrix4.identity()..scale(scale, scale),
+                            alignment: Alignment.bottomCenter,
+                            child: Align(
+                                heightFactor: 0.7,
+                                alignment: Alignment.topCenter,
+                                child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  BookDetailsView(
+                                                    productModel:
+                                                        demoProducts[index],
+                                                    position: 'BestSeller',
+                                                  )));
+                                    },
+                                    child: BestSellerListItem(
+                                      demoProduct: demoProducts[index],
+                                    ))),
+                          ),
+                        );
+                      },
+                      itemCount: demoProducts.length,
+                    ),
                     // ),
                   ),
                 ],

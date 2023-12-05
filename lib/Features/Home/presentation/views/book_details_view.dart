@@ -37,26 +37,28 @@ class BookDetailsView extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Hero(
-                        tag: '$position${(productModel.id).toString()}',
+                      tag: '$position${(productModel.id).toString()}',
+                      child: FadeInImage.assetNetwork(
+                        fit: BoxFit.fill,
+                        placeholderFit: BoxFit.scaleDown,
+                        placeholder: ImgAssets.logo,
+                        image: productModel.images[0],
+                      ),
+                      flightShuttleBuilder: (flightContext,
+                              animation,
+                              flightDirection,
+                              fromHeroContext,
+                              toHeroContext) =>
+                          RotationTransition(
+                        turns: animation,
                         child: FadeInImage.assetNetwork(
                           fit: BoxFit.fill,
                           placeholderFit: BoxFit.scaleDown,
                           placeholder: ImgAssets.logo,
                           image: productModel.images[0],
-                        ),    flightShuttleBuilder: (flightContext,
-                        animation,
-                        flightDirection,
-                        fromHeroContext,
-                        toHeroContext) =>
-                        RotationTransition(
-                          turns: animation,
-                          child: FadeInImage.assetNetwork(
-                            fit: BoxFit.fill,
-                            placeholderFit: BoxFit.scaleDown,
-                            placeholder: ImgAssets.logo,
-                            image: productModel.images[0],
-                          ),
-                        ),),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),

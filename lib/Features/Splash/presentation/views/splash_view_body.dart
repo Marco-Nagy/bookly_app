@@ -15,7 +15,6 @@ class SplashViewBody extends StatefulWidget {
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }
 
-
 class _SplashViewBodyState extends State<SplashViewBody>
     with TickerProviderStateMixin {
   late AnimationController lottieController;
@@ -77,9 +76,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
                       textAlign: TextAlign.center),
                 ],
                 totalRepeatCount: 1,
-                onFinished:() async{
-               await   Future.delayed(kTransitionDuration);
-                 await GoRouter.of(context).push(AppRouter.kHomeView );
+                onFinished: () async {
+                  await Future.delayed(kTransitionDuration);
+                  await GoRouter.of(context).push(AppRouter.kHomeView);
                 },
               ),
             ),
@@ -107,12 +106,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
       });
     });
     logoController.addListener(() {
-        if (logoController.isAnimating) {
-          setState(() {
-            isLoaded = true;
-          });
-        }
-      });
-
+      if (logoController.isAnimating) {
+        setState(() {
+          isLoaded = true;
+        });
+      }
+    });
   }
 }

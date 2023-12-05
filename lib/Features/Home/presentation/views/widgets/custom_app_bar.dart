@@ -28,7 +28,10 @@ class CustomAppBarState extends State<CustomAppBar> {
           Center(
             child: IconButton(
                 onPressed: () {},
-                icon: const Icon(FontAwesomeIcons.magnifyingGlass, size: 24,)),
+                icon: const Icon(
+                  FontAwesomeIcons.magnifyingGlass,
+                  size: 24,
+                )),
           ),
         ],
       ),

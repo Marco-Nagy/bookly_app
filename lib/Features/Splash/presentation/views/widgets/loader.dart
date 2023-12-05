@@ -14,7 +14,7 @@ class Loader extends StatelessWidget {
           Image.asset(
             ImgAssets.logo,
             width: MediaQuery.of(context).size.width * .2,
-            height: MediaQuery.of(context).size.height*.05,
+            height: MediaQuery.of(context).size.height * .05,
             fit: BoxFit.scaleDown,
           ),
           Lottie.asset(

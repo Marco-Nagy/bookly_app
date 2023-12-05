@@ -2,15 +2,52 @@
 class Assets {
   Assets._();
 
+  static const String bookModelAccessInfo = 'lib/Features/Home/data/models/books_model/book_model/access_info.dart';
+  static const String bookModelBookModel = 'lib/Features/Home/data/models/books_model/book_model/book_model.dart';
+  static const String bookModelEpub = 'lib/Features/Home/data/models/books_model/book_model/epub.dart';
+  static const String bookModelImageLinks = 'lib/Features/Home/data/models/books_model/book_model/image_links.dart';
+  static const String bookModelIndustryIdentifier = 'lib/Features/Home/data/models/books_model/book_model/industry_identifier.dart';
+  static const String bookModelItem = 'lib/Features/Home/data/models/books_model/book_model/item.dart';
+  static const String bookModelListPrice = 'lib/Features/Home/data/models/books_model/book_model/list_price.dart';
+  static const String bookModelOffer = 'lib/Features/Home/data/models/books_model/book_model/offer.dart';
+  static const String bookModelPanelizationSummary = 'lib/Features/Home/data/models/books_model/book_model/panelization_summary.dart';
+  static const String bookModelPdf = 'lib/Features/Home/data/models/books_model/book_model/pdf.dart';
+  static const String bookModelReadingModes = 'lib/Features/Home/data/models/books_model/book_model/reading_modes.dart';
+  static const String bookModelRetailPrice = 'lib/Features/Home/data/models/books_model/book_model/retail_price.dart';
+  static const String bookModelSaleInfo = 'lib/Features/Home/data/models/books_model/book_model/sale_info.dart';
+  static const String bookModelSearchInfo = 'lib/Features/Home/data/models/books_model/book_model/search_info.dart';
+  static const String bookModelVolumeInfo = 'lib/Features/Home/data/models/books_model/book_model/volume_info.dart';
+  static const String coreProductsModel = 'lib/core/products_model.dart';
   static const String fontsAgne = 'assets/fonts/Agne.otf';
   static const String fontsBobbers = 'assets/fonts/Bobbers.ttf';
   static const String fontsGTSectraFine = 'assets/fonts/GT_Sectra_Fine.ttf';
   static const String fontsMontserrat = 'assets/fonts/Montserrat.ttf';
   static const String fontsMontserratVariableFontWght = 'assets/fonts/Montserrat-VariableFont_wght.ttf';
+  static const String generatedAssets = 'lib/generated/assets.dart';
   static const String imagesBOOKLY = 'assets/images/BOOKLY.png';
   static const String imagesLoaderBook = 'assets/images/loader-book.json';
   static const String imagesLoadreBook = 'assets/images/loadre-book.json';
   static const String imagesSplashBooks = 'assets/images/splash-books.json';
   static const String imagesStar = 'assets/images/Star.png';
+  static const String libMain = 'lib/main.dart';
+  static const String utilsAppRouter = 'lib/core/utils/app_router.dart';
+  static const String utilsConstant = 'lib/core/utils/constant.dart';
+  static const String utilsImgAssets = 'lib/core/utils/img_assets.dart';
+  static const String utilsStyles = 'lib/core/utils/styles.dart';
+  static const String viewsBookDetailsView = 'lib/Features/Home/presentation/views/book_details_view.dart';
+  static const String viewsHomeView = 'lib/Features/Home/presentation/views/home_view.dart';
+  static const String viewsSplashView = 'lib/Features/Splash/presentation/views/splash_view.dart';
+  static const String viewsSplashViewBody = 'lib/Features/Splash/presentation/views/splash_view_body.dart';
+  static const String widgetsBestSellerListItem = 'lib/Features/Home/presentation/views/widgets/best_seller_list_item.dart';
+  static const String widgetsBookActions = 'lib/Features/Home/presentation/views/widgets/book_actions.dart';
+  static const String widgetsBookRating = 'lib/Features/Home/presentation/views/widgets/book_rating.dart';
+  static const String widgetsCustomAppBar = 'lib/Features/Home/presentation/views/widgets/custom_app_bar.dart';
+  static const String widgetsCustomButton = 'lib/core/widgets/custom_button.dart';
+  static const String widgetsCustomDetailsAppBar = 'lib/Features/Home/presentation/views/widgets/custom_details_app_bar.dart';
+  static const String widgetsCustomeBookImage = 'lib/Features/Home/presentation/views/widgets/custome_book_image.dart';
+  static const String widgetsCustomeListViewItem = 'lib/Features/Home/presentation/views/widgets/custome_list_view_item.dart';
+  static const String widgetsFeaturedBooksListView = 'lib/Features/Home/presentation/views/widgets/featured_books_list_view.dart';
+  static const String widgetsLoader = 'lib/Features/Splash/presentation/views/widgets/loader.dart';
+  static const String widgetsSimilarBooksListView = 'lib/Features/Home/presentation/views/widgets/similar_books_list_view.dart';
 
 }

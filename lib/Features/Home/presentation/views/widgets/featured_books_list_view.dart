@@ -18,14 +18,23 @@ class FeaturedBooksListView extends StatelessWidget {
           squeeze: .9,
           diameterRatio: 1.5,
           childDelegate: ListWheelChildBuilderDelegate(
-              builder: (BuildContext context, int index) =>  InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => BookDetailsView(productModel: demoProducts[index], position: 'FeaturedBooks',)));
-
-                },
-                child: RotatedBox(
-                    quarterTurns: 3, child: CustomBookImage(productModel: demoProducts[index], position: 'FeaturedBooks',)),
-              ),
+              builder: (BuildContext context, int index) => InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => BookDetailsView(
+                                    productModel: demoProducts[index],
+                                    position: 'FeaturedBooks',
+                                  )));
+                    },
+                    child: RotatedBox(
+                        quarterTurns: 3,
+                        child: CustomBookImage(
+                          productModel: demoProducts[index],
+                          position: 'FeaturedBooks',
+                        )),
+                  ),
               childCount: demoProducts.length),
         ),
       ),
