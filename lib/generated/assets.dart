@@ -2,21 +2,21 @@
 class Assets {
   Assets._();
 
-  static const String bookModelAccessInfo = 'lib/Features/Home/data/models/books_model/book_model/access_info.dart';
-  static const String bookModelBookModel = 'lib/Features/Home/data/models/books_model/book_model/book_model.dart';
-  static const String bookModelEpub = 'lib/Features/Home/data/models/books_model/book_model/epub.dart';
-  static const String bookModelImageLinks = 'lib/Features/Home/data/models/books_model/book_model/image_links.dart';
-  static const String bookModelIndustryIdentifier = 'lib/Features/Home/data/models/books_model/book_model/industry_identifier.dart';
-  static const String bookModelItem = 'lib/Features/Home/data/models/books_model/book_model/item.dart';
-  static const String bookModelListPrice = 'lib/Features/Home/data/models/books_model/book_model/list_price.dart';
-  static const String bookModelOffer = 'lib/Features/Home/data/models/books_model/book_model/offer.dart';
-  static const String bookModelPanelizationSummary = 'lib/Features/Home/data/models/books_model/book_model/panelization_summary.dart';
-  static const String bookModelPdf = 'lib/Features/Home/data/models/books_model/book_model/pdf.dart';
-  static const String bookModelReadingModes = 'lib/Features/Home/data/models/books_model/book_model/reading_modes.dart';
-  static const String bookModelRetailPrice = 'lib/Features/Home/data/models/books_model/book_model/retail_price.dart';
-  static const String bookModelSaleInfo = 'lib/Features/Home/data/models/books_model/book_model/sale_info.dart';
-  static const String bookModelSearchInfo = 'lib/Features/Home/data/models/books_model/book_model/search_info.dart';
-  static const String bookModelVolumeInfo = 'lib/Features/Home/data/models/books_model/book_model/volume_info.dart';
+  static const String booksModelAccessInfo = 'lib/Features/Home/data/models/books_model/access_info.dart';
+  static const String booksModelBookModel = 'lib/Features/Home/data/models/books_model/book_model.dart';
+  static const String booksModelEpub = 'lib/Features/Home/data/models/books_model/epub.dart';
+  static const String booksModelImageLinks = 'lib/Features/Home/data/models/books_model/image_links.dart';
+  static const String booksModelIndustryIdentifier = 'lib/Features/Home/data/models/books_model/industry_identifier.dart';
+  static const String booksModelItem = 'lib/Features/Home/data/models/books_model/item.dart';
+  static const String booksModelListPrice = 'lib/Features/Home/data/models/books_model/list_price.dart';
+  static const String booksModelOffer = 'lib/Features/Home/data/models/books_model/offer.dart';
+  static const String booksModelPanelizationSummary = 'lib/Features/Home/data/models/books_model/panelization_summary.dart';
+  static const String booksModelPdf = 'lib/Features/Home/data/models/books_model/pdf.dart';
+  static const String booksModelReadingModes = 'lib/Features/Home/data/models/books_model/reading_modes.dart';
+  static const String booksModelRetailPrice = 'lib/Features/Home/data/models/books_model/retail_price.dart';
+  static const String booksModelSaleInfo = 'lib/Features/Home/data/models/books_model/sale_info.dart';
+  static const String booksModelSearchInfo = 'lib/Features/Home/data/models/books_model/search_info.dart';
+  static const String booksModelVolumeInfo = 'lib/Features/Home/data/models/books_model/volume_info.dart';
   static const String coreProductsModel = 'lib/core/products_model.dart';
   static const String fontsAgne = 'assets/fonts/Agne.otf';
   static const String fontsBobbers = 'assets/fonts/Bobbers.ttf';

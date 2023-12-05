@@ -1,8 +1,9 @@
+import 'package:bookly/Features/Home/data/models/books_model/panelization_summary.dart';
 import 'package:equatable/equatable.dart';
+
 
 import 'image_links.dart';
 import 'industry_identifier.dart';
-import 'panelization_summary.dart';
 import 'reading_modes.dart';
 
 class VolumeInfo extends Equatable {

@@ -1,8 +1,10 @@
+import 'package:bookly/Features/Home/data/models/books_model/retail_price.dart';
 import 'package:equatable/equatable.dart';
 
 import 'list_price.dart';
 import 'offer.dart';
-import 'retail_price.dart';
+
+
 
 class SaleInfo extends Equatable {
   final String? country;

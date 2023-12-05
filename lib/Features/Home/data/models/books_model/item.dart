@@ -1,9 +1,9 @@
+import 'package:bookly/Features/Home/data/models/books_model/sale_info.dart';
+import 'package:bookly/Features/Home/data/models/books_model/search_info.dart';
+import 'package:bookly/Features/Home/data/models/books_model/volume_info.dart';
 import 'package:equatable/equatable.dart';
 
 import 'access_info.dart';
-import 'sale_info.dart';
-import 'search_info.dart';
-import 'volume_info.dart';
 
 class Item extends Equatable {
   final String? kind;
