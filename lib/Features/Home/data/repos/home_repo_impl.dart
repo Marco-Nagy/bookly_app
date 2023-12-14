@@ -25,7 +25,6 @@ class HomeRepoImpl implements HomeRepo {
 
   @override
   Future<Either<Failure, BookModel>> fetchFeaturedBooks() {
-    // TODO: implement fetchFeaturedBooks
     throw UnimplementedError();
   }
 }
