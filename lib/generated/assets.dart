@@ -19,6 +19,8 @@ class Assets {
   static const String booksModelVolumeInfo = 'lib/Features/Home/data/models/books_model/volume_info.dart';
   static const String coreProductsModel = 'lib/core/products_model.dart';
   static const String errorsFailure = 'lib/core/errors/failure.dart';
+  static const String featuredBooksFeaturedBooksCubit = 'lib/Features/Home/presentation/viewModels/featured_books/featured_books_cubit.dart';
+  static const String featuredBooksFeaturedBooksState = 'lib/Features/Home/presentation/viewModels/featured_books/featured_books_state.dart';
   static const String fontsAgne = 'assets/fonts/Agne.otf';
   static const String fontsBobbers = 'assets/fonts/Bobbers.ttf';
   static const String fontsGTSectraFine = 'assets/fonts/GT_Sectra_Fine.ttf';
@@ -38,8 +40,6 @@ class Assets {
   static const String utilsConstant = 'lib/core/utils/constant.dart';
   static const String utilsImgAssets = 'lib/core/utils/img_assets.dart';
   static const String utilsStyles = 'lib/core/utils/styles.dart';
-  static const String viewModelsFeaturedBooksCubit = 'lib/Features/Home/presentation/viewModels/featured_books_cubit.dart';
-  static const String viewModelsFeaturedBooksState = 'lib/Features/Home/presentation/viewModels/featured_books_state.dart';
   static const String viewsBookDetailsView = 'lib/Features/Home/presentation/views/book_details_view.dart';
   static const String viewsHomeView = 'lib/Features/Home/presentation/views/home_view.dart';
   static const String viewsSplashView = 'lib/Features/Splash/presentation/views/splash_view.dart';
