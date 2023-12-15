@@ -19,8 +19,8 @@ class Assets {
   static const String booksModelVolumeInfo = 'lib/Features/Home/data/models/books_model/volume_info.dart';
   static const String coreProductsModel = 'lib/core/products_model.dart';
   static const String errorsFailure = 'lib/core/errors/failure.dart';
-  static const String featuredBooksFeaturedBooksCubit = 'lib/Features/Home/presentation/viewModels/featured_books/featured_books_cubit.dart';
-  static const String featuredBooksFeaturedBooksState = 'lib/Features/Home/presentation/viewModels/featured_books/featured_books_state.dart';
+  static const String featuredBooksFeaturedBooksCubit = 'lib/Features/Home/presentation/viewModels/featured_books/newest_books_cubit.dart';
+  static const String featuredBooksFeaturedBooksState = 'lib/Features/Home/presentation/viewModels/featured_books/newest_books_state.dart';
   static const String fontsAgne = 'assets/fonts/Agne.otf';
   static const String fontsBobbers = 'assets/fonts/Bobbers.ttf';
   static const String fontsGTSectraFine = 'assets/fonts/GT_Sectra_Fine.ttf';
@@ -33,6 +33,8 @@ class Assets {
   static const String imagesSplashBooks = 'assets/images/splash-books.json';
   static const String imagesStar = 'assets/images/Star.png';
   static const String libMain = 'lib/main.dart';
+  static const String newestBooksFeaturedBooksCubit = 'lib/Features/Home/presentation/viewModels/newest_books/newest_books_cubit.dart';
+  static const String newestBooksFeaturedBooksState = 'lib/Features/Home/presentation/viewModels/newest_books/newest_books_state.dart';
   static const String reposHomeRepo = 'lib/Features/Home/data/repos/home_repo.dart';
   static const String reposHomeRepoImpl = 'lib/Features/Home/data/repos/home_repo_impl.dart';
   static const String utilsApiService = 'lib/core/utils/api_service.dart';
