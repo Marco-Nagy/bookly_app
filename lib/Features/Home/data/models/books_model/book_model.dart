@@ -258,6 +258,8 @@ class VolumeInfo {
     required this.authors,
     required this.infoLink,
     required this.subtitle,
+    required this.ratingsCount,
+    required this.averageRating,
   });
 
   List<IndustryIdentifier> industryIdentifiers;
@@ -275,6 +277,9 @@ class VolumeInfo {
   String publishedDate;
   List<String> categories;
   String maturityRating;
+  num ratingsCount ;
+  num  averageRating;
+  
   bool allowAnonLogging;
   String contentVersion;
   List<String> authors;
@@ -313,6 +318,8 @@ class VolumeInfo {
                 .toList(),
         infoLink: json["infoLink"] ?? "",
         subtitle: json["subtitle"] ?? "",
+    ratingsCount:json[ "ratingsCount"]??0,
+    averageRating:json[ "averageRating"]??0.0,
       );
 }
 

@@ -26,7 +26,7 @@ final Item item;
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            '4.5',
+            item.volumeInfo.averageRating.toString(),
             style: Styles.textStyleNum14.copyWith(color: kWhite70Opacity),
           ),
         ),
@@ -36,7 +36,7 @@ final Item item;
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            '( 2390 )',
+            '( ${item.volumeInfo.ratingsCount} )',
             style: Styles.textStyleNum14.copyWith(color: kWhite70Opacity),
           ),
         ),
