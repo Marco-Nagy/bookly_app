@@ -1,11 +1,12 @@
+import 'package:bookly/Features/Home/data/models/books_model/book_model.dart';
 import 'package:bookly/core/utils/constant.dart';
 import 'package:bookly/core/utils/img_assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class BookRating extends StatelessWidget {
-  const BookRating({Key? key}) : super(key: key);
-
+  const BookRating({super.key, required this.item});
+final Item item;
   @override
   Widget build(BuildContext context) {
     return Row(

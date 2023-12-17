@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomListViewItem extends StatelessWidget {
-  const CustomListViewItem({Key? key}) : super(key: key);
+  const CustomListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {

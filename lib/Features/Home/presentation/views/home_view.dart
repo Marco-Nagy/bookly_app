@@ -1,10 +1,13 @@
-import 'package:bookly/Features/Home/presentation/views/widgets/best_seller_list_item.dart';
-import 'package:bookly/Features/Home/presentation/views/book_details_view.dart';
+import 'package:bookly/Features/Home/presentation/viewModels/newest_books/newest_books_cubit.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/featured_books_list_view.dart';
-import 'package:bookly/core/products_model.dart';
+import 'package:bookly/Features/Home/presentation/views/widgets/newest_books_list_item.dart';
+import 'package:bookly/Features/Home/presentation/views/widgets/newest_books_list_view.dart';
+import 'package:bookly/Features/Splash/presentation/views/widgets/loader.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/core/widgets/error_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -63,7 +66,7 @@ class _HomeViewState extends State<HomeView> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Best Seller',
+                    'Newest Books',
                     style: Styles.titleMedium18.copyWith(color: Colors.white),
                   ),
                   Expanded(
@@ -75,47 +78,7 @@ class _HomeViewState extends State<HomeView> {
                     //       borderRadius: BorderRadius.only(
                     //           topLeft: Radius.circular(50),
                     //           topRight: Radius.circular(5))),
-                    child: ListView.builder(
-                      controller: scrollController,
-                      physics: const BouncingScrollPhysics(),
-                      itemBuilder: (context, index) {
-                        double scale = 1.0;
-                        if (topContainer > 0.5) {
-                          scale = index + 0.5 - topContainer;
-                          if (scale < 0) {
-                            scale = 0;
-                          } else if (scale > 1) {
-                            scale = 1;
-                          }
-                        }
-                        return Opacity(
-                          opacity: scale,
-                          child: Transform(
-                            transform: Matrix4.identity()..scale(scale, scale),
-                            alignment: Alignment.bottomCenter,
-                            child: Align(
-                                heightFactor: 0.7,
-                                alignment: Alignment.topCenter,
-                                child: GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  BookDetailsView(
-                                                    productModel:
-                                                        demoProducts[index],
-                                                    position: 'BestSeller',
-                                                  )));
-                                    },
-                                    child: BestSellerListItem(
-                                      demoProduct: demoProducts[index],
-                                    ))),
-                          ),
-                        );
-                      },
-                      itemCount: demoProducts.length,
-                    ),
+                    child:NewestBooksListView(scrollController: scrollController, topContainer: topContainer) ,
                     // ),
                   ),
                 ],

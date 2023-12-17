@@ -6,8 +6,8 @@ import 'custome_book_image.dart';
 
 class SimilarBooksListView extends StatelessWidget {
   const SimilarBooksListView({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +19,16 @@ class SimilarBooksListView extends StatelessWidget {
             onTap: () {
               // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BookDetailsView(productModel: demoProducts[index], position: 'SimilarBooks',)));
             },
-            child: Padding(
+            child:  Padding(
               padding: const EdgeInsets.all(8.0),
               child: CustomBookImage(
-                productModel: demoProducts[index],
-                position: 'SimilarBooks',
+                imageUrl:'https://imgv3.fotor.com/images/gallery/Fiction-Book-Covers.jpg',
+                position: 'SimilarBooks$index',
               ),
+              // child: SizedBox(),
             ));
       },
-      itemCount: demoProducts.length,
+      itemCount: items.length,
     );
   }
 }

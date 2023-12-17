@@ -1,16 +1,18 @@
+import 'package:bookly/Features/Home/data/models/books_model/book_model.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/custome_book_image.dart';
-import 'package:bookly/core/products_model.dart';
 import 'package:bookly/core/utils/constant.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class BestSellerListItem extends StatelessWidget {
-  const BestSellerListItem({
-    Key? key,
-    required this.demoProduct,
-  }) : super(key: key);
-  final ProductModel demoProduct;
+class NewestBooksListItem extends StatelessWidget {
+  const NewestBooksListItem({
+    super.key,
+    required this.items, this.index,
+  });
+  final Item items;
+
+  final index;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,8 +31,8 @@ class BestSellerListItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomBookImage(
-              productModel: demoProduct,
-              position: 'BestSeller',
+              imageUrl:  items.volumeInfo.imageLinks.thumbnail,
+              position: 'NewestBooks${index}',
             ),
             const Expanded(child: SizedBox()),
             Expanded(
@@ -39,12 +41,12 @@ class BestSellerListItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Harry Potter and the Goblet of Fire',
+                      items.volumeInfo.title,
                       style: Styles.textStyle20.copyWith(color: Colors.white),
                       maxLines: 2,
                     ),
                     Text(
-                      'J.K. Rowling',
+                      items.volumeInfo.authors.toString().replaceAll('[', '').replaceAll(']', '')??'-',
                       style: Styles.textStyleNum14
                           .copyWith(color: kWhite70Opacity),
                     ),
@@ -52,12 +54,12 @@ class BestSellerListItem extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            '19.99 €',
+                            '${items.saleInfo.listPrice.amount } ${items.saleInfo.retailPrice.currencyCode}',
                             style: Styles.textStyleNum14,
                           ),
                         ),
-                        const Expanded(
-                          child: BookRating(),
+                         Expanded(
+                          child: BookRating(item: items,),
                         )
                       ],
                     ),

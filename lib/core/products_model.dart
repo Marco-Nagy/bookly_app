@@ -20,7 +20,7 @@ class ProductModel {
   });
 }
 
-List<ProductModel> demoProducts = [
+List<ProductModel> items = [
   ProductModel(
     id: 0,
     name: 'Studio 3 Wireless',

@@ -1,12 +1,10 @@
-import 'package:bookly/core/products_model.dart';
 import 'package:bookly/core/utils/img_assets.dart';
 import 'package:flutter/material.dart';
 
 class CustomBookImage extends StatelessWidget {
   const CustomBookImage(
-      {Key? key, required this.productModel, required this.position})
-      : super(key: key);
-  final ProductModel productModel;
+      {super.key, required this.imageUrl, required this.position});
+  final String imageUrl;
   final String position;
   @override
   Widget build(BuildContext context) {
@@ -19,23 +17,40 @@ class CustomBookImage extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         child: Hero(
-            tag: '$position${(productModel.id).toString()}',
+            tag: position,
             flightShuttleBuilder: (flightContext, animation, flightDirection,
                     fromHeroContext, toHeroContext) =>
                 RotationTransition(
                   turns: animation,
-                  child: FadeInImage.assetNetwork(
+                  child:FadeInImage.assetNetwork(
                     fit: BoxFit.fill,
                     placeholderFit: BoxFit.scaleDown,
                     placeholder: ImgAssets.logo,
-                    image: productModel.images[0],
+                    imageErrorBuilder:  (context, error, stackTrace) {
+                      return const Image(
+                        image: AssetImage(ImgAssets.logo),
+                        height: 60,
+                        width: 60,
+                        fit: BoxFit.contain,
+                      );
+                    },
+                    image: imageUrl,
                   ),
                 ),
-            child: FadeInImage.assetNetwork(
+            child:  FadeInImage.assetNetwork(
               fit: BoxFit.fill,
               placeholderFit: BoxFit.scaleDown,
               placeholder: ImgAssets.logo,
-              image: productModel.images[0],
+              image: imageUrl,
+              imageErrorBuilder:  (context, error, stackTrace) {
+                return const Image(
+                  image: AssetImage(ImgAssets.logo),
+                  height: 60,
+                  width: 60,
+                  fit: BoxFit.contain,
+                );
+              },
+
             )),
       ),
     );

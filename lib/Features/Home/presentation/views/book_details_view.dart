@@ -1,17 +1,16 @@
+import 'package:bookly/Features/Home/data/models/books_model/book_model.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/book_actions.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/custom_details_app_bar.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/similar_books_list_view.dart';
-import 'package:bookly/core/products_model.dart';
 import 'package:bookly/core/utils/img_assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsView extends StatelessWidget {
   const BookDetailsView(
-      {Key? key, required this.productModel, required this.position})
-      : super(key: key);
-  final ProductModel productModel;
+      {super.key, required this.items, required this.position});
+  final Item items;
   final String position;
 
   @override
@@ -37,12 +36,21 @@ class BookDetailsView extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Hero(
-                      tag: '$position${(productModel.id).toString()}',
+                      tag: position,
                       child: FadeInImage.assetNetwork(
                         fit: BoxFit.fill,
                         placeholderFit: BoxFit.scaleDown,
                         placeholder: ImgAssets.logo,
-                        image: productModel.images[0],
+                        image: items.volumeInfo .imageLinks .thumbnail??'',
+                        imageErrorBuilder:  (context, error, stackTrace) {
+                          return const Image(
+                            image: AssetImage(ImgAssets.logo),
+                            height: 60,
+                            width: 60,
+                            fit: BoxFit.contain,
+                          );
+                        },
+
                       ),
                       flightShuttleBuilder: (flightContext,
                               animation,
@@ -55,9 +63,18 @@ class BookDetailsView extends StatelessWidget {
                           fit: BoxFit.fill,
                           placeholderFit: BoxFit.scaleDown,
                           placeholder: ImgAssets.logo,
-                          image: productModel.images[0],
+                          image: items.volumeInfo .imageLinks .thumbnail??'',
+                          imageErrorBuilder:  (context, error, stackTrace) {
+                            return const Image(
+                              image: AssetImage(ImgAssets.logo),
+                              height: 60,
+                              width: 60,
+                              fit: BoxFit.contain,
+                            );
+                          },
                         ),
                       ),
+
                     ),
                   ),
                 ),
@@ -82,8 +99,8 @@ class BookDetailsView extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              const Center(
-                child: BookRating(),
+               Center(
+                child: BookRating(item: items,),
               ),
               const SizedBox(
                 height: 37,
