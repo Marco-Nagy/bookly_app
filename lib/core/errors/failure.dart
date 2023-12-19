@@ -37,14 +37,17 @@ class ServerFailure extends Failure {
 
   factory ServerFailure.fromResponse(
       int? statusCode, Map<String, dynamic> response) {
-    if (statusCode == 401 || statusCode == 402 || statusCode == 403) {
-      return ServerFailure(response['error']['message']);
-    } else if (statusCode == 404) {
-      return ServerFailure("Yor Request not found , Please Try later!");
-    } else if (statusCode == 500) {
-      return ServerFailure("Internal Server error , Please Try later!");
-    } else {
-      return ServerFailure('Opps There was an Error, Please try again');
+    switch (statusCode) {
+      case 401:
+      case 402:
+      case 403:
+        return ServerFailure(response['error']['message']);
+      case 404:
+        return ServerFailure("Yor Request not found , Please Try later!");
+      case 500:
+        return ServerFailure("Internal Server error , Please Try later!");
+      default:
+        return ServerFailure('Opps There was an Error, Please try again');
     }
   }
 }

@@ -32,7 +32,7 @@ class NewestBooksListItem extends StatelessWidget {
           children: [
             CustomBookImage(
               imageUrl:  items.volumeInfo.imageLinks.thumbnail,
-              position: 'NewestBooks${index}',
+              position: 'NewestBooks$index',
             ),
             const Expanded(child: SizedBox()),
             Expanded(
