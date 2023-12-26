@@ -1,17 +1,36 @@
 import 'package:bookly/Features/Home/data/models/books_model/book_model.dart';
+import 'package:bookly/Features/Home/presentation/viewModels/similar_books/similar_books_cubit.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/book_actions.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/custom_details_app_bar.dart';
-import 'package:bookly/Features/Home/presentation/views/widgets/similar_books_list_view.dart';
+import 'package:bookly/Features/Home/presentation/views/similar_books_list_view.dart';
 import 'package:bookly/core/utils/img_assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class BookDetailsView extends StatelessWidget {
+class BookDetailsView extends StatefulWidget {
   const BookDetailsView(
       {super.key, required this.items, required this.position});
   final Item items;
   final String position;
+
+  @override
+  State<BookDetailsView> createState() => _BookDetailsViewState();
+}
+
+class _BookDetailsViewState extends State<BookDetailsView> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _fetchData();
+  }
+
+  _fetchData() {
+    BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(category: widget.items.volumeInfo.categories.first.toString());
+    print('======${widget.items.volumeInfo.categories.first}');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +55,12 @@ class BookDetailsView extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Hero(
-                      tag: position,
+                      tag: widget.position,
                       child: FadeInImage.assetNetwork(
                         fit: BoxFit.fill,
                         placeholderFit: BoxFit.scaleDown,
                         placeholder: ImgAssets.logo,
-                        image: items.volumeInfo .imageLinks .thumbnail??'',
+                        image: widget.items.volumeInfo .imageLinks .thumbnail??'',
                         imageErrorBuilder:  (context, error, stackTrace) {
                           return const Image(
                             image: AssetImage(ImgAssets.logo),
@@ -63,7 +82,7 @@ class BookDetailsView extends StatelessWidget {
                           fit: BoxFit.fill,
                           placeholderFit: BoxFit.scaleDown,
                           placeholder: ImgAssets.logo,
-                          image: items.volumeInfo .imageLinks .thumbnail??'',
+                          image: widget.items.volumeInfo.imageLinks .thumbnail??'',
                           imageErrorBuilder:  (context, error, stackTrace) {
                             return const Image(
                               image: AssetImage(ImgAssets.logo),
@@ -82,15 +101,16 @@ class BookDetailsView extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              const Text(
-                'The Jungle Book',
+               Text(
+                widget.items.volumeInfo.title,
                 style: Styles.textStyle30,
+                 maxLines: 1,
               ),
               const SizedBox(
                 height: 5,
               ),
               Text(
-                'Rudyard Kipling',
+                widget.items.volumeInfo.authors.toString().replaceAll('[', '').replaceAll(']', '')??'-',
                 style: Styles.titleMedium18.copyWith(
                     fontWeight: FontWeight.w900,
                     color: Colors.white.withOpacity(.7),
@@ -100,12 +120,12 @@ class BookDetailsView extends StatelessWidget {
                 height: 16,
               ),
                Center(
-                child: BookRating(item: items,),
+                child: BookRating(item: widget.items,),
               ),
               const SizedBox(
                 height: 37,
               ),
-              const BookActions(),
+               BookActions(item: widget.items ),
               const SizedBox(
                 height: 50,
               ),

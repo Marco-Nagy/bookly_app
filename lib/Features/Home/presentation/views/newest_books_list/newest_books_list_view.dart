@@ -1,12 +1,17 @@
+import 'package:bookly/Features/Home/data/models/books_model/book_model.dart';
 import 'package:bookly/Features/Home/presentation/viewModels/newest_books/newest_books_cubit.dart';
+import 'package:bookly/Features/Home/presentation/viewModels/similar_books/similar_books_cubit.dart';
 import 'package:bookly/Features/Home/presentation/views/book_details_view.dart';
+import 'package:bookly/Features/Home/presentation/views/newest_books_list/newest_books_list_item.dart';
 import 'package:bookly/Features/Splash/presentation/views/widgets/loader.dart';
+import 'package:bookly/core/utils/app_router.dart';
+import 'package:bookly/core/utils/services_locator.dart';
 
 import 'package:bookly/core/widgets/error_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
-import 'newest_books_list_item.dart';
 
 class NewestBooksListView extends StatefulWidget {
   const NewestBooksListView(
@@ -52,19 +57,25 @@ class _NewestBooksListViewState extends State<NewestBooksListView> {
               return Opacity(
                 opacity: scale,
                 child: Transform(
-                  transform: Matrix4.identity()..scale(scale, scale),
+                  transform: Matrix4.identity()
+                    ..scale(scale, scale),
                   alignment: Alignment.bottomCenter,
                   child: Align(
                       heightFactor: 0.7,
                       alignment: Alignment.topCenter,
                       child: GestureDetector(
                           onTap: () {
+                            // GoRouter.of(context).push(AppRouter.kDetailsView,extra: state.bookModel.items[index]);
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => BookDetailsView(
-                                          items: state.bookModel.items[index],
-                                          position: 'NewestBooks$index',
+                                    builder: (context) =>
+                                        BlocProvider(
+                                          create: (context) => SimilarBooksCubit(getIt()),
+                                          child: BookDetailsView(
+                                            items: state.bookModel.items[index],
+                                            position: 'NewestBooks$index',
+                                          ),
                                         )));
                             print('NewestBooks$index');
                           },

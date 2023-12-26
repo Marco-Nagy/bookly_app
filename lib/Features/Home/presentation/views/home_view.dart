@@ -1,13 +1,9 @@
-import 'package:bookly/Features/Home/presentation/viewModels/newest_books/newest_books_cubit.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/custom_app_bar.dart';
-import 'package:bookly/Features/Home/presentation/views/widgets/featured_books_list_view.dart';
-import 'package:bookly/Features/Home/presentation/views/widgets/newest_books_list_item.dart';
-import 'package:bookly/Features/Home/presentation/views/widgets/newest_books_list_view.dart';
-import 'package:bookly/Features/Splash/presentation/views/widgets/loader.dart';
+import 'package:bookly/Features/Home/presentation/views/featured_books_list_view.dart';
 import 'package:bookly/core/utils/styles.dart';
-import 'package:bookly/core/widgets/error_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'newest_books_list/newest_books_list_view.dart';
+
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);

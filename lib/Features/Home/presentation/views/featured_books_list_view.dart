@@ -1,13 +1,18 @@
 import 'package:bookly/Features/Home/presentation/viewModels/featured_books/featured_books_cubit.dart';
+import 'package:bookly/Features/Home/presentation/viewModels/similar_books/similar_books_cubit.dart';
 import 'package:bookly/Features/Home/presentation/views/book_details_view.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/custome_book_image.dart';
 import 'package:bookly/Features/Splash/presentation/views/widgets/loader.dart';
 import 'package:bookly/core/products_model.dart';
 import 'package:bookly/core/products_model.dart';
 import 'package:bookly/core/products_model.dart';
+import 'package:bookly/core/utils/app_router.dart';
+import 'package:bookly/core/utils/services_locator.dart';
 import 'package:bookly/core/widgets/error_widget.dart';
+import 'package:bookly/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class FeaturedBooksListView extends StatefulWidget {
   const FeaturedBooksListView({super.key});
@@ -46,10 +51,13 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => BookDetailsView(
+                                    builder: (context) => BlocProvider(
+  create: (context) => SimilarBooksCubit(getIt()),
+  child: BookDetailsView(
                                           items: state.bookModel.items[index],
                                           position: 'FeaturedBooks$index',
-                                        )));
+                                        ),
+)));
                           },
                           child: RotatedBox(
                               quarterTurns: 3,

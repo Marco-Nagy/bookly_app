@@ -30,6 +30,7 @@ class NewestBooksListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
             CustomBookImage(
               imageUrl:  items.volumeInfo.imageLinks.thumbnail,
               position: 'NewestBooks$index',
