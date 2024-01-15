@@ -3,7 +3,6 @@ class Assets {
   Assets._();
 
   static const String booksModelBookModel = 'lib/Features/Home/data/models/books_model/book_model.dart';
-  static const String coreProductsModel = 'lib/core/products_model.dart';
   static const String errorsFailure = 'lib/core/errors/failure.dart';
   static const String featuredBooksFeaturedBooksCubit = 'lib/Features/Home/presentation/viewModels/featured_books/featured_books_cubit.dart';
   static const String featuredBooksFeaturedBooksState = 'lib/Features/Home/presentation/viewModels/featured_books/featured_books_state.dart';

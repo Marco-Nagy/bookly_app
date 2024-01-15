@@ -3,9 +3,7 @@ import 'package:bookly/Features/Home/presentation/viewModels/similar_books/simil
 import 'package:bookly/Features/Home/presentation/views/home_view.dart';
 import 'package:bookly/Features/Home/presentation/views/book_details_view.dart';
 import 'package:bookly/Features/Splash/presentation/views/splash_view.dart';
-import 'package:bookly/core/products_model.dart';
 import 'package:bookly/core/utils/services_locator.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
