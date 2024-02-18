@@ -1,6 +1,7 @@
 import 'package:bookly/Features/Home/data/models/books_model/book_model.dart';
 import 'package:bookly/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BookActions extends StatelessWidget {
   const BookActions({super.key, required this.item});
@@ -11,18 +12,24 @@ class BookActions extends StatelessWidget {
       children: [
         Expanded(
             child: CustomButton(
-          text: '${item.saleInfo.listPrice.amount} ${item.saleInfo.listPrice.currencyCode}',
+          text: item.saleInfo.listPrice.amount.toDouble()==0.0?'Free':'${item.saleInfo.listPrice.amount} ${item.saleInfo.listPrice.currencyCode}',
           textColor: Colors.black,
           backGroundColor: Colors.white,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(12), bottomLeft: Radius.circular(12)),
         )),
-        Expanded(
+         Expanded(
             child: CustomButton(
-          text: 'Free preview',
+          text: 'Preview',
+          onPressed: () async {
+            Uri url = Uri.parse(item.volumeInfo.previewLink);
+            if(await launchUrl(url)) {
+              await launchUrl(url);
+            }
+          },
           textColor: Colors.white,
-          backGroundColor: Color.fromRGBO(239, 130, 98, 1),
-          borderRadius: BorderRadius.only(
+          backGroundColor: const Color.fromRGBO(239, 130, 98, 1),
+          borderRadius: const BorderRadius.only(
               topRight: Radius.circular(12), bottomRight: Radius.circular(12)),
         )),
       ],

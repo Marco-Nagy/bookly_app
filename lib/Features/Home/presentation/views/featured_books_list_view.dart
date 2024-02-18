@@ -22,9 +22,11 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
     super.initState();
     _fetchData();
   }
+
   _fetchData() {
     BlocProvider.of<FeaturedBooksCubit>(context).fetchFeaturedBooks();
   }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
@@ -46,17 +48,19 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => BlocProvider(
-  create: (context) => SimilarBooksCubit(getIt()),
-  child: BookDetailsView(
-                                          items: state.bookModel.items[index],
-                                          position: 'FeaturedBooks$index',
-                                        ),
-)));
+                                          create: (context) =>
+                                              SimilarBooksCubit(getIt()),
+                                          child: BookDetailsView(
+                                            items: state.bookModel.items[index],
+                                            position: 'FeaturedBooks$index',
+                                          ),
+                                        )));
                           },
                           child: RotatedBox(
                               quarterTurns: 3,
                               child: CustomBookImage(
-                                imageUrl:state.bookModel.items[index].volumeInfo.imageLinks.thumbnail,
+                                imageUrl: state.bookModel.items[index]
+                                    .volumeInfo.imageLinks.thumbnail,
                                 position: 'FeaturedBooks$index',
                               )),
                         ),
@@ -65,11 +69,13 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
             ),
           );
         } else if (state is FeaturedBooksFailure) {
-          return ErrorScreen(errorMsg: state.errorMsg,onPress: ()=>_fetchData(),);
-        }else{
+          return ErrorScreen(
+            errorMsg: state.errorMsg,
+            onPress: () => _fetchData(),
+          );
+        } else {
           return const Loader();
         }
-
       },
     );
   }

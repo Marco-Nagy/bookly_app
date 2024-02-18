@@ -7,12 +7,14 @@ class CustomButton extends StatelessWidget {
       {super.key,
       required this.backGroundColor,
       required this.textColor,
+       this.onPressed,
       this.borderRadius,
       required this.text});
   final Color backGroundColor;
   final Color textColor;
   final BorderRadius? borderRadius;
   final String text;
+  final Function? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class CustomButton extends StatelessWidget {
                   borderRadius: borderRadius ?? BorderRadius.circular(16)),
               backgroundColor: backGroundColor),
           clipBehavior: Clip.antiAliasWithSaveLayer,
-          onPressed: () {},
+          onPressed: ()=> onPressed!(),
           child: Text(
             text,
             style: Styles.titleMedium18.copyWith(color: textColor),

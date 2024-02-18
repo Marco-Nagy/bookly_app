@@ -1,7 +1,5 @@
 import 'package:bookly/core/utils/img_assets.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 class CustomAppBar extends StatefulWidget {
   const CustomAppBar({Key? key}) : super(key: key);
 
@@ -25,14 +23,14 @@ class CustomAppBarState extends State<CustomAppBar> {
             fit: BoxFit.scaleDown,
           ),
           const Spacer(),
-          Center(
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  FontAwesomeIcons.magnifyingGlass,
-                  size: 24,
-                )),
-          ),
+          // Center(
+          //   child: IconButton(
+          //       onPressed: () {},
+          //       icon: const Icon(
+          //         FontAwesomeIcons.magnifyingGlass,
+          //         size: 24,
+          //       )),
+          // ),
         ],
       ),
     );
