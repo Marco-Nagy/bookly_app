@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bookly">
+    package="com.marconbishay.bookly">
     <!-- Provide required visibility configuration for API level 30 and above -->
     <queries>
         <intent>
@@ -9,7 +9,7 @@
     </queries>
     <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="bookly"
+        android:label="Bookly"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
