@@ -1,6 +1,6 @@
-# 📖Bookly
+# 📘Bookly
 
-![bookly](https://i.postimg.cc/C5KN6rwS/BOOKLY.png)
+#  📖📘 ![bookly](https://i.postimg.cc/C5KN6rwS/BOOKLY.png)
 [![bookly-photographic.png](https://i.postimg.cc/8PJ1Q701/bookly-photographic.png)](https://postimg.cc/LnSdj8S7)
 [![Bookly-Home-Screen.png](https://i.postimg.cc/rmBdY0JC/Bookly-Home-Screen.png)](https://postimg.cc/62h58QFy)
 [![Bookly-Details-Screen.png](https://i.postimg.cc/yNSspfrt/Bookly-Details-Screen.png)](https://postimg.cc/GBrWHjRx)
