@@ -4,6 +4,7 @@ import 'package:bookly/core/errors/failure.dart';
 import 'package:bookly/core/utils/api_service.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 
 class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
@@ -18,8 +19,13 @@ class HomeRepoImpl implements HomeRepo {
               'volumes?Filtering=free-ebooks&Sorting=newest &q=computer science');
       BookModel bookModel =  BookModel(totalItems: 0, kind: '', items: []);
       bookModel = BookModel.fromJson(data);
+      debugPrint('$data');
+
       return right(bookModel);
     }  catch (error) {
+      debugPrint('error $error');
+
+
       if(error is DioException) {
         return Left(ServerFailure.fromDioException(error));
       }

@@ -70,6 +70,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
                 fontFamily: agne,
               ),
               child: AnimatedTextKit(
+
                 animatedTexts: [
                   TyperAnimatedText('Feed Your Brain Now \n\nRead Free Books',
                       speed: const Duration(milliseconds: 100),
